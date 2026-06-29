@@ -1,0 +1,70 @@
+/**
+ * Mode — admin styles.
+ *
+ * Layout glue on top of core admin classes (.wrap, .card, .button, .dashicons).
+ * Loaded only on the Settings → Modes screen.
+ */
+
+/* Match the white background of the core Connectors screen, this page only. */
+body.settings_page_mode-settings #wpcontent {
+	background: #fff;
+}
+
+#mode-settings .mode-modes__inner {
+	max-width: 850px;
+}
+
+/* Arrange each core .card into an icon · text · action row. */
+#mode-settings .card.mode-row {
+	max-width: none;
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+
+#mode-settings .mode-row__icon {
+	flex: 0 0 auto;
+	width: 48px;
+	height: 48px;
+	border-radius: 8px;
+	background: #fff;
+	border: 1px solid #dcdcde;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#mode-settings .mode-row__icon .dashicons {
+	font-size: 26px;
+	width: 26px;
+	height: 26px;
+}
+
+#mode-settings .mode-row__text {
+	flex: 1 1 auto;
+	min-width: 0;
+}
+
+#mode-settings .mode-row__title {
+	font-size: 15px;
+	margin: 0 0 2px;
+	padding: 0;
+}
+
+#mode-settings .mode-row__desc {
+	margin: 0;
+	color: #50575e;
+}
+
+#mode-settings .mode-row__action {
+	flex: 0 0 auto;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+#mode-settings .mode-row__status {
+	color: #008a20;
+	font-weight: 600;
+	font-size: 12px;
+}
