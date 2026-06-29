@@ -38,6 +38,10 @@ body.settings_page_mode-settings #wpcontent {
 	margin-right: auto;
 }
 
+.wp-header-end {
+	margin-bottom: 20px;
+}
+
 /* Arrange each core .card into an icon · text · action row. */
 #mode-settings .card.mode-row {
 	max-width: none;
