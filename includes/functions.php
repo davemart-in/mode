@@ -60,6 +60,25 @@ function mode_get( $id ) {
 }
 
 /**
+ * Render a placeholder screen body.
+ *
+ * Used by built-in modes until their real static mockups land (plan Step 6).
+ * Each mode screen's render callback delegates here so the per-screen seams
+ * already exist and can be filled in individually.
+ *
+ * @param string $title Heading to show for the screen.
+ * @return void
+ */
+function mode_render_placeholder_screen( $title ) {
+	echo '<div class="wrap">';
+	echo '<h1>' . esc_html( $title ) . '</h1>';
+	echo '<div class="notice notice-info inline"><p>';
+	echo esc_html__( 'Preview coming soon.', 'mode' );
+	echo '</p></div>';
+	echo '</div>';
+}
+
+/**
  * Determine the mode for the current admin request, if any.
  *
  * A request is "in a mode" when its `page` query var matches an active mode's

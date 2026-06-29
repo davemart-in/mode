@@ -26,6 +26,11 @@ require_once MODE_PATH . 'includes/class-mode.php';
 require_once MODE_PATH . 'includes/class-mode-registry.php';
 require_once MODE_PATH . 'includes/functions.php';
 
+// Built-in modes. Each registers itself on the `mode_register` action.
+require_once MODE_PATH . 'includes/modes/newsletter.php';
+require_once MODE_PATH . 'includes/modes/podcast.php';
+require_once MODE_PATH . 'includes/modes/social.php';
+
 /**
  * Bootstrap the plugin: give registered modes a chance to register themselves.
  *
