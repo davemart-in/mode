@@ -10,6 +10,9 @@
 
 defined( 'ABSPATH' ) || exit;
 
+// Static mock screens for this mode (the render callbacks below).
+require_once __DIR__ . '/social-screens.php';
+
 add_action(
 	'mode_register',
 	function () {
@@ -21,6 +24,12 @@ add_action(
 				'description' => __( 'Plan, schedule, and track posts across networks.', 'mode' ),
 				'position'    => 30,
 				'screens'     => array(
+					array(
+						'slug'   => 'dashboard',
+						'label'  => __( 'Dashboard', 'mode' ),
+						'icon'   => 'dashicons-dashboard',
+						'render' => 'mode_social_screen_dashboard',
+					),
 					array(
 						'slug'   => 'composer',
 						'label'  => __( 'Composer', 'mode' ),
@@ -39,50 +48,8 @@ add_action(
 						'icon'   => 'dashicons-admin-users',
 						'render' => 'mode_social_screen_accounts',
 					),
-					array(
-						'slug'   => 'analytics',
-						'label'  => __( 'Analytics', 'mode' ),
-						'icon'   => 'dashicons-chart-area',
-						'render' => 'mode_social_screen_analytics',
-					),
 				),
 			)
 		);
 	}
 );
-
-/**
- * Render the Social → Composer screen.
- *
- * @return void
- */
-function mode_social_screen_composer() {
-	mode_render_placeholder_screen( __( 'Social — Composer', 'mode' ) );
-}
-
-/**
- * Render the Social → Calendar screen.
- *
- * @return void
- */
-function mode_social_screen_calendar() {
-	mode_render_placeholder_screen( __( 'Social — Calendar', 'mode' ) );
-}
-
-/**
- * Render the Social → Accounts screen.
- *
- * @return void
- */
-function mode_social_screen_accounts() {
-	mode_render_placeholder_screen( __( 'Social — Accounts', 'mode' ) );
-}
-
-/**
- * Render the Social → Analytics screen.
- *
- * @return void
- */
-function mode_social_screen_analytics() {
-	mode_render_placeholder_screen( __( 'Social — Analytics', 'mode' ) );
-}
