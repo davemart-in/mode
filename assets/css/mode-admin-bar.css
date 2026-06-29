@@ -14,6 +14,7 @@
 
 #wpadminbar #wp-admin-bar-mode-selector > .ab-item .ab-icon {
 	margin-right: 6px;
+	top: -2px;
 }
 
 /* Highlight the mode you're currently in. */

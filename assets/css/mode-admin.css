@@ -8,10 +8,34 @@
 /* Match the white background of the core Connectors screen, this page only. */
 body.settings_page_mode-settings #wpcontent {
 	background: #fff;
+	padding-left: unset;
+}
+
+#mode-settings {
+	margin: 9px 00;
+}
+
+#mode-settings h1 {
+	padding-bottom: 2px;
+}
+
+#mode-settings p.description {
+	margin-bottom: 20px;
+	max-width: unset;
+}
+
+#mode-settings .mode-modes__header {
+	padding: 0 25px;
+}
+
+#mode-settings .mode-modes__footer {
+	margin-top: 20px;
 }
 
 #mode-settings .mode-modes__inner {
-	max-width: 850px;
+	max-width: 632px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /* Arrange each core .card into an icon · text · action row. */
@@ -61,6 +85,13 @@ body.settings_page_mode-settings #wpcontent {
 	display: flex;
 	align-items: center;
 	gap: 12px;
+}
+
+#mode-settings .mode-row__action button.is-compact {
+	min-height: unset;
+    height: 32px;
+    line-height: unset;
+    padding: 0 12px;
 }
 
 #mode-settings .mode-row__status {

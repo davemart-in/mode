@@ -36,6 +36,36 @@ class Mode_Admin_Menu {
 		// …then, very late, hide them or replace the menu with the focused one.
 		add_action( 'admin_menu', array( $self, 'focus_menu' ), 9999 );
 		add_action( 'admin_enqueue_scripts', array( $self, 'enqueue_assets' ) );
+		add_filter( 'admin_title', array( $self, 'filter_admin_title' ), 10, 2 );
+	}
+
+	/**
+	 * Give mode pages a meaningful browser-tab title.
+	 *
+	 * The rewritten menu means WordPress can't derive a page title on its own
+	 * (it comes out empty), so set one as "Mode · Screen ‹ …" to match core's
+	 * title style.
+	 *
+	 * @param string $admin_title The full <title> text WordPress built.
+	 * @param string $title       The page-title portion (empty for mode pages).
+	 * @return string
+	 */
+	public function filter_admin_title( $admin_title, $title ) {
+		$mode = mode_current();
+
+		if ( ! $mode ) {
+			return $admin_title;
+		}
+
+		$screen = Mode_Space::current_screen( $mode );
+		$page   = $screen ? $mode->label . ' · ' . $screen['label'] : $mode->label;
+
+		// WordPress left the page portion blank; prepend ours.
+		if ( '' === trim( (string) $title ) ) {
+			return $page . $admin_title;
+		}
+
+		return $admin_title;
 	}
 
 	/**

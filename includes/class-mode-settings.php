@@ -111,27 +111,30 @@ class Mode_Settings {
 		$modes    = $registry->all();
 		?>
 		<div class="wrap mode-modes" id="mode-settings">
-			<h1><?php esc_html_e( 'Modes', 'mode' ); ?></h1>
-			<p class="description">
-				<?php esc_html_e( 'Activate a mode to add it to the Mode menu in the toolbar. Each mode is a focused space for one kind of work.', 'mode' ); ?>
-			</p>
+			<div class="mode-modes__header">
+				<h1><?php esc_html_e( 'Modes', 'mode' ); ?></h1>
+				<p class="description">
+					<?php esc_html_e( 'Activate a mode to add it to the Mode menu in the toolbar. Each mode is a focused space for one kind of work.', 'mode' ); ?>
+				</p>
+			</div>
 			<hr />
-
 			<div class="mode-modes__inner">
-				<?php $this->maybe_render_notice( $registry ); ?>
+				<div class="mode-modes__content">
+					<?php $this->maybe_render_notice( $registry ); ?>
 
-				<?php if ( empty( $modes ) ) : ?>
-					<div class="notice notice-info inline"><p><?php esc_html_e( 'No modes are available yet.', 'mode' ); ?></p></div>
-				<?php else : ?>
-					<?php
-					foreach ( $modes as $mode ) {
-						$this->render_row( $mode, $registry->is_active( $mode->id ) );
-					}
-					?>
-					<p class="description mode-modes__footer">
-						<?php esc_html_e( 'Looking for more? Other plugins can add their own modes.', 'mode' ); ?>
-					</p>
-				<?php endif; ?>
+					<?php if ( empty( $modes ) ) : ?>
+						<div class="notice notice-info inline"><p><?php esc_html_e( 'No modes are available yet.', 'mode' ); ?></p></div>
+					<?php else : ?>
+						<?php
+						foreach ( $modes as $mode ) {
+							$this->render_row( $mode, $registry->is_active( $mode->id ) );
+						}
+						?>
+						<p class="description mode-modes__footer">
+							<?php esc_html_e( 'Looking for more? Other plugins can add their own modes.', 'mode' ); ?>
+						</p>
+					<?php endif; ?>
+				</div>
 			</div>
 		</div>
 		<?php
@@ -164,7 +167,7 @@ class Mode_Settings {
 					<input type="hidden" name="mode_id" value="<?php echo esc_attr( $mode->id ); ?>" />
 					<input type="hidden" name="mode_state" value="<?php echo esc_attr( $next_state ); ?>" />
 					<?php wp_nonce_field( self::ACTION . '_' . $mode->id ); ?>
-					<button type="submit" class="<?php echo esc_attr( $button_class ); ?>"><?php echo esc_html( $button_text ); ?></button>
+					<button type="submit" class="<?php echo esc_attr( $button_class ); ?> is-compact"><?php echo esc_html( $button_text ); ?></button>
 				</form>
 			</div>
 		</div>
