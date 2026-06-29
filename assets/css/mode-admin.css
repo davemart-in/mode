@@ -277,3 +277,167 @@ body.settings_page_mode-settings #wpcontent {
 	font-size: 12px;
 }
 
+/* Secondary inline text (e.g. an episode number next to a title). */
+.mode-screen .mode-muted {
+	display: block;
+	margin-top: 2px;
+	color: #646970;
+	font-size: 12px;
+}
+
+/* Stacked field label above an input. */
+.mode-screen .mode-field-label {
+	display: block;
+	margin-bottom: 4px;
+	font-weight: 600;
+}
+
+/* Checkmark list. */
+.mode-screen .mode-checklist {
+	margin: 0;
+}
+
+.mode-screen .mode-checklist li {
+	position: relative;
+	margin: 0 0 8px;
+	padding-left: 26px;
+	color: #3c434a;
+}
+
+.mode-screen .mode-checklist li::before {
+	content: "\f147";
+	position: absolute;
+	left: 0;
+	top: -1px;
+	font-family: dashicons;
+	font-size: 18px;
+	color: #008a20;
+}
+
+/* Recording studio. */
+.mode-screen .mode-rec {
+	padding: 24px 16px;
+	text-align: center;
+}
+
+.mode-screen .mode-rec__btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 84px;
+	height: 84px;
+	border: 0;
+	border-radius: 50%;
+	background: #d63638;
+	color: #fff;
+	cursor: pointer;
+	box-shadow: 0 2px 8px rgba(214, 54, 56, 0.4);
+}
+
+.mode-screen .mode-rec__btn:hover {
+	background: #b32d2e;
+}
+
+.mode-screen .mode-rec__btn .dashicons {
+	width: 40px;
+	height: 40px;
+	font-size: 40px;
+}
+
+.mode-screen .mode-rec__timer {
+	margin: 16px 0 6px;
+	font-size: 32px;
+	font-weight: 600;
+	font-variant-numeric: tabular-nums;
+}
+
+.mode-screen .mode-wave {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 3px;
+	height: 48px;
+	margin: 8px 0 16px;
+}
+
+.mode-screen .mode-wave span {
+	width: 3px;
+	min-height: 3px;
+	border-radius: 2px;
+	background: #c3c4c7;
+}
+
+/* Distribution platform rows. */
+.mode-screen .mode-platform {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	padding: 14px 16px;
+	border-bottom: 1px solid #f0f0f1;
+}
+
+.mode-screen .mode-platform:last-child {
+	border-bottom: 0;
+}
+
+.mode-screen .mode-platform__icon {
+	display: flex;
+	flex: 0 0 auto;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 8px;
+	background: #f0f0f1;
+}
+
+.mode-screen .mode-platform__icon .dashicons {
+	width: 22px;
+	height: 22px;
+	font-size: 22px;
+	color: #1d2327;
+}
+
+.mode-screen .mode-platform__text {
+	flex: 1 1 auto;
+	min-width: 0;
+}
+
+.mode-screen .mode-platform__name {
+	font-weight: 600;
+}
+
+.mode-screen .mode-platform__meta {
+	color: #50575e;
+	font-size: 12px;
+}
+
+/* Horizontal percentage meters. */
+.mode-screen .mode-meter {
+	margin-bottom: 14px;
+}
+
+.mode-screen .mode-meter:last-child {
+	margin-bottom: 0;
+}
+
+.mode-screen .mode-meter__row {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 5px;
+	font-size: 13px;
+}
+
+.mode-screen .mode-meter__track {
+	height: 8px;
+	overflow: hidden;
+	border-radius: 999px;
+	background: #f0f0f1;
+}
+
+.mode-screen .mode-meter__fill {
+	height: 100%;
+	border-radius: 999px;
+	background: #3858e9;
+}
+

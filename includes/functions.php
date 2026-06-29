@@ -79,6 +79,22 @@ function mode_render_placeholder_screen( $title ) {
 }
 
 /**
+ * Render a small status pill, for use in mode screens.
+ *
+ * @param string $label   Visible text.
+ * @param string $variant Style variant, e.g. sent, scheduled, draft, active,
+ *                        pending, unsub, connected, disconnected.
+ * @return string HTML.
+ */
+function mode_badge( $label, $variant ) {
+	return sprintf(
+		'<span class="mode-badge mode-badge--%s">%s</span>',
+		esc_attr( $variant ),
+		esc_html( $label )
+	);
+}
+
+/**
  * Determine the mode for the current admin request, if any.
  *
  * A request is "in a mode" when its `page` query var matches an active mode's

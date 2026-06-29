@@ -10,6 +10,9 @@
 
 defined( 'ABSPATH' ) || exit;
 
+// Static mock screens for this mode (the render callbacks below).
+require_once __DIR__ . '/podcast-screens.php';
+
 add_action(
 	'mode_register',
 	function () {
@@ -21,6 +24,12 @@ add_action(
 				'description' => __( 'Publish episodes and reach listeners everywhere.', 'mode' ),
 				'position'    => 20,
 				'screens'     => array(
+					array(
+						'slug'   => 'dashboard',
+						'label'  => __( 'Dashboard', 'mode' ),
+						'icon'   => 'dashicons-dashboard',
+						'render' => 'mode_podcast_screen_dashboard',
+					),
 					array(
 						'slug'   => 'episodes',
 						'label'  => __( 'Episodes', 'mode' ),
@@ -39,50 +48,9 @@ add_action(
 						'icon'   => 'dashicons-rss',
 						'render' => 'mode_podcast_screen_distribution',
 					),
-					array(
-						'slug'   => 'stats',
-						'label'  => __( 'Stats', 'mode' ),
-						'icon'   => 'dashicons-chart-bar',
-						'render' => 'mode_podcast_screen_stats',
-					),
 				),
 			)
 		);
 	}
 );
 
-/**
- * Render the Podcast → Episodes screen.
- *
- * @return void
- */
-function mode_podcast_screen_episodes() {
-	mode_render_placeholder_screen( __( 'Podcast — Episodes', 'mode' ) );
-}
-
-/**
- * Render the Podcast → Recording screen.
- *
- * @return void
- */
-function mode_podcast_screen_recording() {
-	mode_render_placeholder_screen( __( 'Podcast — Recording', 'mode' ) );
-}
-
-/**
- * Render the Podcast → Distribution screen.
- *
- * @return void
- */
-function mode_podcast_screen_distribution() {
-	mode_render_placeholder_screen( __( 'Podcast — Distribution', 'mode' ) );
-}
-
-/**
- * Render the Podcast → Stats screen.
- *
- * @return void
- */
-function mode_podcast_screen_stats() {
-	mode_render_placeholder_screen( __( 'Podcast — Stats', 'mode' ) );
-}
