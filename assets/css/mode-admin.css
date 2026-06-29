@@ -85,3 +85,195 @@ body.settings_page_mode-settings #wpcontent {
 	font-weight: 600;
 }
 
+/* ---------------------------------------------------------------------------
+ * Mode screens — static mock UIs. Built on core components (.wp-list-table,
+ * .button, .page-title-action); these rules add only the pieces core lacks
+ * (stat tiles, content cards, status pills, simple charts, template grid).
+ * ------------------------------------------------------------------------- */
+
+/* Stat tiles. */
+.mode-screen .mode-stats {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+	gap: 16px;
+	margin: 16px 0 24px;
+}
+
+.mode-screen .mode-stat {
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 8px;
+	padding: 16px 18px;
+}
+
+.mode-screen .mode-stat__label {
+	margin: 0 0 6px;
+	color: #50575e;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 0.3px;
+}
+
+.mode-screen .mode-stat__value {
+	font-size: 28px;
+	font-weight: 600;
+	line-height: 1.1;
+}
+
+.mode-screen .mode-stat__delta {
+	display: inline-block;
+	margin-top: 6px;
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.mode-screen .mode-stat__delta.is-up {
+	color: #008a20;
+}
+
+.mode-screen .mode-stat__delta.is-down {
+	color: #b32d2e;
+}
+
+/* Two-column (main + sidebar) layout. */
+.mode-screen .mode-cols {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: 20px;
+	align-items: start;
+}
+
+@media (max-width: 960px) {
+	.mode-screen .mode-cols {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* Content cards. */
+.mode-screen .mode-card {
+	margin: 0 0 16px;
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 8px;
+}
+
+.mode-screen .mode-card__head {
+	padding: 12px 16px;
+	border-bottom: 1px solid #f0f0f1;
+	font-weight: 600;
+}
+
+.mode-screen .mode-card__body {
+	padding: 16px;
+}
+
+/* A list table sitting flush inside a card. */
+.mode-screen .mode-card__table.wp-list-table {
+	border: 0;
+	box-shadow: none;
+}
+
+.mode-screen .mode-card__table th,
+.mode-screen .mode-card__table td {
+	border-bottom: 1px solid #f0f0f1;
+}
+
+.mode-screen .mode-actions .button {
+	display: block;
+	width: 100%;
+	margin-bottom: 8px;
+	text-align: center;
+}
+
+.mode-screen .mode-actions .button:last-child {
+	margin-bottom: 0;
+}
+
+/* Simple bar chart. */
+.mode-screen .mode-bars {
+	display: flex;
+	align-items: flex-end;
+	gap: 6px;
+	height: 80px;
+}
+
+.mode-screen .mode-bars span {
+	flex: 1;
+	background: #3858e9;
+	border-radius: 3px 3px 0 0;
+	opacity: 0.85;
+}
+
+/* Status pills. */
+.mode-badge {
+	display: inline-block;
+	padding: 2px 8px;
+	border-radius: 999px;
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 1.6;
+}
+
+.mode-badge--sent,
+.mode-badge--active {
+	background: #edfaef;
+	color: #008a20;
+}
+
+.mode-badge--scheduled,
+.mode-badge--pending {
+	background: #fcf9e8;
+	color: #8a6d00;
+}
+
+.mode-badge--draft,
+.mode-badge--unsub {
+	background: #f0f0f1;
+	color: #50575e;
+}
+
+/* Template grid. */
+.mode-screen .mode-templates {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+	gap: 16px;
+	margin-top: 16px;
+}
+
+.mode-screen .mode-tpl {
+	overflow: hidden;
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 8px;
+}
+
+.mode-screen .mode-tpl__thumb {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 120px;
+	background: linear-gradient(135deg, #f0f3ff, #e8ecfb);
+	color: #3858e9;
+}
+
+.mode-screen .mode-tpl__thumb .dashicons {
+	width: 40px;
+	height: 40px;
+	font-size: 40px;
+}
+
+.mode-screen .mode-tpl__body {
+	padding: 12px 14px;
+}
+
+.mode-screen .mode-tpl__name {
+	margin: 0 0 2px;
+	font-weight: 600;
+}
+
+.mode-screen .mode-tpl__meta {
+	margin: 0 0 10px;
+	color: #50575e;
+	font-size: 12px;
+}
+

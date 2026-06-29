@@ -10,6 +10,9 @@
 
 defined( 'ABSPATH' ) || exit;
 
+// Static mock screens for this mode (the render callbacks below).
+require_once __DIR__ . '/newsletter-screens.php';
+
 add_action(
 	'mode_register',
 	function () {
@@ -51,38 +54,3 @@ add_action(
 	}
 );
 
-/**
- * Render the Newsletter → Dashboard screen.
- *
- * @return void
- */
-function mode_newsletter_screen_dashboard() {
-	mode_render_placeholder_screen( __( 'Newsletter — Dashboard', 'mode' ) );
-}
-
-/**
- * Render the Newsletter → Subscribers screen.
- *
- * @return void
- */
-function mode_newsletter_screen_subscribers() {
-	mode_render_placeholder_screen( __( 'Newsletter — Subscribers', 'mode' ) );
-}
-
-/**
- * Render the Newsletter → Broadcasts screen.
- *
- * @return void
- */
-function mode_newsletter_screen_broadcasts() {
-	mode_render_placeholder_screen( __( 'Newsletter — Broadcasts', 'mode' ) );
-}
-
-/**
- * Render the Newsletter → Templates screen.
- *
- * @return void
- */
-function mode_newsletter_screen_templates() {
-	mode_render_placeholder_screen( __( 'Newsletter — Templates', 'mode' ) );
-}
