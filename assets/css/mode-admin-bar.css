@@ -1,0 +1,23 @@
+/**
+ * Mode — toolbar selector styles.
+ *
+ * Loaded wherever the admin toolbar shows. Aligns the dashicon in the bar and
+ * marks the current mode in the dropdown; everything else inherits core toolbar
+ * styles.
+ */
+
+/* Render the dashicon glyph in the toolbar item. */
+#wpadminbar #wp-admin-bar-mode-selector > .ab-item .ab-icon:before {
+	font: normal 18px/1 dashicons;
+	top: 3px;
+}
+
+#wpadminbar #wp-admin-bar-mode-selector > .ab-item .ab-icon {
+	margin-right: 6px;
+}
+
+/* Highlight the mode you're currently in. */
+#wpadminbar #wp-admin-bar-mode-selector .mode-current > .ab-item {
+	font-weight: 600;
+	color: #72aee6;
+}
