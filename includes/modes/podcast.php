@@ -24,21 +24,25 @@ add_action(
 					array(
 						'slug'   => 'episodes',
 						'label'  => __( 'Episodes', 'mode' ),
+						'icon'   => 'dashicons-format-audio',
 						'render' => 'mode_podcast_screen_episodes',
 					),
 					array(
 						'slug'   => 'recording',
 						'label'  => __( 'Recording', 'mode' ),
+						'icon'   => 'dashicons-microphone',
 						'render' => 'mode_podcast_screen_recording',
 					),
 					array(
 						'slug'   => 'distribution',
 						'label'  => __( 'Distribution', 'mode' ),
+						'icon'   => 'dashicons-rss',
 						'render' => 'mode_podcast_screen_distribution',
 					),
 					array(
 						'slug'   => 'stats',
 						'label'  => __( 'Stats', 'mode' ),
+						'icon'   => 'dashicons-chart-bar',
 						'render' => 'mode_podcast_screen_stats',
 					),
 				),

@@ -52,7 +52,8 @@ class Mode {
 	public $position;
 
 	/**
-	 * Normalized list of screens. Each entry: array{ slug:string, label:string, render:callable }.
+	 * Normalized list of screens. Each entry:
+	 * array{ slug:string, label:string, icon:string, render:callable }.
 	 *
 	 * @var array[]
 	 */
@@ -98,6 +99,7 @@ class Mode {
 			$normalized[] = array(
 				'slug'   => sanitize_key( $screen['slug'] ),
 				'label'  => (string) ( $screen['label'] ?? '' ),
+				'icon'   => (string) ( $screen['icon'] ?? 'dashicons-admin-generic' ),
 				'render' => $screen['render'] ?? null,
 			);
 		}

@@ -68,3 +68,20 @@ body.settings_page_mode-settings #wpcontent {
 	font-weight: 600;
 	font-size: 12px;
 }
+
+/* ---------------------------------------------------------------------------
+ * Focused space — the left nav while inside a mode.
+ * The menu is built from core markup, so this only adds the back-row accent
+ * and a little separation between the header and the screen links.
+ * ------------------------------------------------------------------------- */
+
+/* The back / header row: emphasise the mode name and divide it from screens. */
+#adminmenu li.menu-top.mode-space__back {
+	margin-bottom: 6px;
+	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+}
+
+#adminmenu li.menu-top.mode-space__back .wp-menu-name {
+	font-weight: 600;
+}
+

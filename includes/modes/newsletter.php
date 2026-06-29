@@ -24,21 +24,25 @@ add_action(
 					array(
 						'slug'   => 'dashboard',
 						'label'  => __( 'Dashboard', 'mode' ),
+						'icon'   => 'dashicons-dashboard',
 						'render' => 'mode_newsletter_screen_dashboard',
 					),
 					array(
 						'slug'   => 'subscribers',
 						'label'  => __( 'Subscribers', 'mode' ),
+						'icon'   => 'dashicons-groups',
 						'render' => 'mode_newsletter_screen_subscribers',
 					),
 					array(
 						'slug'   => 'broadcasts',
 						'label'  => __( 'Broadcasts', 'mode' ),
+						'icon'   => 'dashicons-email-alt',
 						'render' => 'mode_newsletter_screen_broadcasts',
 					),
 					array(
 						'slug'   => 'templates',
 						'label'  => __( 'Templates', 'mode' ),
+						'icon'   => 'dashicons-layout',
 						'render' => 'mode_newsletter_screen_templates',
 					),
 				),

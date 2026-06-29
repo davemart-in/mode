@@ -24,21 +24,25 @@ add_action(
 					array(
 						'slug'   => 'composer',
 						'label'  => __( 'Composer', 'mode' ),
+						'icon'   => 'dashicons-edit',
 						'render' => 'mode_social_screen_composer',
 					),
 					array(
 						'slug'   => 'calendar',
 						'label'  => __( 'Calendar', 'mode' ),
+						'icon'   => 'dashicons-calendar-alt',
 						'render' => 'mode_social_screen_calendar',
 					),
 					array(
 						'slug'   => 'accounts',
 						'label'  => __( 'Accounts', 'mode' ),
+						'icon'   => 'dashicons-admin-users',
 						'render' => 'mode_social_screen_accounts',
 					),
 					array(
 						'slug'   => 'analytics',
 						'label'  => __( 'Analytics', 'mode' ),
+						'icon'   => 'dashicons-chart-area',
 						'render' => 'mode_social_screen_analytics',
 					),
 				),

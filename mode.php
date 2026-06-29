@@ -25,8 +25,10 @@ define( 'MODE_URL', plugin_dir_url( __FILE__ ) );
 require_once MODE_PATH . 'includes/class-mode.php';
 require_once MODE_PATH . 'includes/class-mode-registry.php';
 require_once MODE_PATH . 'includes/functions.php';
+require_once MODE_PATH . 'includes/class-mode-space.php';
 require_once MODE_PATH . 'includes/class-mode-settings.php';
 require_once MODE_PATH . 'includes/class-mode-admin-bar.php';
+require_once MODE_PATH . 'includes/class-mode-admin-menu.php';
 
 // Built-in modes. Each registers itself on the `mode_register` action.
 require_once MODE_PATH . 'includes/modes/newsletter.php';
@@ -35,6 +37,7 @@ require_once MODE_PATH . 'includes/modes/social.php';
 
 Mode_Settings::init();
 Mode_Admin_Bar::init();
+Mode_Admin_Menu::init();
 
 /**
  * Bootstrap the plugin: give registered modes a chance to register themselves.
